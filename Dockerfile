@@ -51,7 +51,7 @@ ENV DOCUMENTS=about=./about.md
 
 EXPOSE ${PORT}
 STOPSIGNAL SIGINT
-ENTRYPOINT [ "bash", "docker-entrypoint.sh" ]
+ENTRYPOINT ["sh", "docker-entrypoint.sh"]
 
 #HEALTHCHECK --interval=30s --timeout=30s --start-period=5s \
 #    --retries=3 CMD [ "curl" , "-f" "localhost:${PORT}", "||", "exit", "1"]
