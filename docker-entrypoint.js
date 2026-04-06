@@ -87,7 +87,7 @@ const config = {
     type: STORAGE_TYPE,
     host: STORAGE_HOST,
     port: STORAGE_PORT,
-    expire: STORAGE_EXPIRE_SECONDS,
+    expire: parseInt(STORAGE_EXPIRE_SECONDS),
     bucket: STORAGE_AWS_BUCKET,
     region: STORAGE_AWS_REGION,
     connectionUrl: `postgres://${STORAGE_USERNAME}:${STORAGE_PASSWORD}@${STORAGE_HOST}:${STORAGE_PORT}/${STORAGE_DB}`,
