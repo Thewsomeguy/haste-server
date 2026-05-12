@@ -101,6 +101,15 @@ var documentHandler = new DocumentHandler({
 
 var app = connect();
 
+app.use('/healthz', (req, res, next) => {
+  if (req.method === 'GET') {
+    res.writeHead(200)
+    res.end('ok')
+  } else {
+    next()
+  }
+});
+
 // Rate limit all requests
 if (config.rateLimits) {
   config.rateLimits.end = true;
